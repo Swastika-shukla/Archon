@@ -31,9 +31,9 @@ jobs:
       - name: Check imports
         run: |
           cd backend
-          python -c "from app.agent.orchestrator import Orchestrator"
-          python -c "from app.api.routes import router"
-          python -c "from app.tools import list_tools"
+          python -c "from app.tools import list_tools; print('Tools OK')"
+          python -c "from app.agent.state import AgentState; print('State OK')"
+          python -c "from app.core.executor import Executor; print('Executor OK')"
 
   frontend:
     name: Frontend Build Check
