@@ -1,9 +1,9 @@
-🌐 Live Demo: [your-vercel-url] (coming soon)
+![CI](https://github.com/Swastika-shukla/Archon/actions/workflows/ci.yml/badge.svg)
 ---
 
 🚀 Archon — AI File Management Agent
 
-Archon is an AI-powered file management system that can organi🌐 Live Demo: [your-vercel-url] (coming soon)ze, clean, and manage files automatically using a reasoning-based agent (ReAct loop).
+Archon is an AI-powered file management system that can organize, clean, and manage files automatically using a reasoning-based agent (ReAct loop).
 
 It combines a Python FastAPI backend + Angular frontend to create a real-time, ChatGPT-style file assistant that actually acts on your system.
 
@@ -28,6 +28,7 @@ Unlike basic scripts, Archon thinks before acting:
 🗑️ Safe delete (recoverable, not permanent)
 📋 List & search files quickly
 🔄 Undo operations (session-based)
+🧪 Preview before executing (dry run mode - simulate changes safely before applying them)
 
 ---
 
@@ -54,7 +55,7 @@ Live Response (WebSocket)
 🧠 Backend
 Python, FastAPI
 Semantic Kernel
-Groq (LLM)
+OpenRouter + GPT-4 (LLM)
 WebSockets
 
 🎨 Frontend
@@ -76,7 +77,8 @@ venv\Scripts\activate
 pip install -r requirements.txt
 
 # Add API key
-echo GROQ_API_KEY=your_key > .env
+echo OPENROUTER_API_KEY=your_key > .env
+echo OPENROUTER_MODEL=openai/gpt-4o >> .env
 
 python main.py
 ```
